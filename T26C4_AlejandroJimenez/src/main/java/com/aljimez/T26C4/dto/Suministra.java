@@ -1,0 +1,79 @@
+package com.aljimez.T26C4.dto;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "suministra")
+public class Suministra {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@Column(name = "precio")
+	private int precio;
+
+	@ManyToOne
+	@JoinColumn(name = "pieza_id")
+	private Piezas pieza;
+
+	@ManyToOne
+	@JoinColumn(name = "proveedor_id")
+	private Proveedores proveedores;
+
+	public Suministra() {
+	}
+
+	public Suministra(Long id, int precio, Piezas pieza_id, Proveedores proveedores_id) {
+		this.id = id;
+		this.precio = precio;
+		this.pieza= pieza_id;
+		this.proveedores = proveedores_id;
+
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(int precio) {
+		this.precio = precio;
+	}
+
+	public Piezas getPieza() {
+		return pieza;
+	}
+
+	public void setPieza(Piezas pieza) {
+		this.pieza = pieza;
+	}
+
+	public Proveedores getProveedores() {
+		return proveedores;
+	}
+
+	public void setProveedores(Proveedores proveedores) {
+		this.proveedores = proveedores;
+	}
+
+	@Override
+	public String toString() {
+		return "Suministra [id=" + id + ", precio=" + precio + ", piezas=" + pieza + ", proveedores=" + proveedores + "]";
+	}
+
+}
