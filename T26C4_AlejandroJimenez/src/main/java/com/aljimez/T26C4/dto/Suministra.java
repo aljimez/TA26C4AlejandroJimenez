@@ -15,8 +15,7 @@ public class Suministra {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
+private int id;
 	@Column(name = "precio")
 	private int precio;
 
@@ -31,20 +30,12 @@ public class Suministra {
 	public Suministra() {
 	}
 
-	public Suministra(Long id, int precio, Piezas pieza_id, Proveedores proveedores_id) {
-		this.id = id;
+	public Suministra( int precio, Piezas pieza_id, Proveedores proveedores_id) {
+		
 		this.precio = precio;
 		this.pieza= pieza_id;
 		this.proveedores = proveedores_id;
 
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public int getPrecio() {
@@ -73,7 +64,7 @@ public class Suministra {
 
 	@Override
 	public String toString() {
-		return "Suministra [id=" + id + ", precio=" + precio + ", piezas=" + pieza + ", proveedores=" + proveedores + "]";
+		return "Suministra [ precio=" + precio + ", piezas=" + pieza + ", proveedores=" + proveedores + "]";
 	}
 
 }

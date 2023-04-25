@@ -12,8 +12,9 @@ public interface IProveedoresService {
 
 	public Proveedores actualizarProveedores(Proveedores proveedores); // Actualiza datos del estudiante UPDATE
 
-	Proveedores proveedoresXID(Long id);
 
 	void eliminarProveedores(Long id);
+
+	Proveedores proveedoresXID(Long id);
 
 }

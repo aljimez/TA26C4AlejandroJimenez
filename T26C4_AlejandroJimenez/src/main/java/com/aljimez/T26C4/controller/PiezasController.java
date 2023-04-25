@@ -28,6 +28,7 @@ public class PiezasController {
 		
 		return piezasServiceImpl.listPiezas();
 	}
+	
 	@PostMapping("/piezas")
 	public Piezas salvarPiezas(@RequestBody Piezas piezas) {
 		
@@ -35,7 +36,7 @@ public class PiezasController {
 	}
 	
 	@GetMapping ("/piezas/{id}")
-	public Piezas piezasXID(@PathVariable (name = "id")Long id) {
+	public Piezas piezasXID(@PathVariable (name = "id")int id) {
 		
 		
 		 Piezas	piezas_xid = piezasServiceImpl.piezasXID(id);
@@ -45,8 +46,7 @@ public class PiezasController {
 	}
 	
 	@PutMapping("/piezas/{id}")
-	public Piezas actualizarPiezas (@PathVariable(name = "id") Long id , @RequestBody Piezas piezas) {
-		
+	public Piezas actualizarPiezas (@PathVariable(name = "id") int id , @RequestBody Piezas piezas) {
 		
 		Piezas	Pieza_seleccionado = piezasServiceImpl.piezasXID(id);
 		
@@ -58,7 +58,7 @@ public class PiezasController {
 		
 	}
 	
-	@DeleteMapping("/curso/{id}")
+	@DeleteMapping("/piezas/{id}")
 	public void eliminarPiezas(@PathVariable(name ="id")Long id) {
 		
 		piezasServiceImpl.eliminarPieza(id);

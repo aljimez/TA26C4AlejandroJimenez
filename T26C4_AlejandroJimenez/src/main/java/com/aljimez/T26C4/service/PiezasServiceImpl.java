@@ -25,7 +25,7 @@ public class PiezasServiceImpl implements IPiezasService{
 	}
 
 	@Override
-	public Piezas piezasXID(Long id) {
+	public Piezas piezasXID(int id) {
 		// TODO Auto-generated method stub
 		return iPiezasDAO.findById(id).get();
 	}

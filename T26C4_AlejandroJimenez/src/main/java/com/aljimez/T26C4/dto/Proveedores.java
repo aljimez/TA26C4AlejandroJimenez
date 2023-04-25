@@ -16,7 +16,6 @@ import jakarta.persistence.Table;
 public class Proveedores {
 
 	@Id
-	@Column(name = "id")
 	private String id;
 	
 	@Column(name = "nombre")

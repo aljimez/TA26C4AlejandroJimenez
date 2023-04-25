@@ -14,9 +14,10 @@ public interface IPiezasService {
 	Piezas actualizarPiezas(Piezas piezas);
 
 
-	Piezas piezasXID(Long id);
 
 	void eliminarPieza(Long id);
+
+	Piezas piezasXID(int id);
 
 
 

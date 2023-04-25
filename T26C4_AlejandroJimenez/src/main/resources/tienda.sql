@@ -17,15 +17,15 @@ CREATE TABLE proveedores (
 );
 
 CREATE TABLE suministra (
-    piezas_id INT NOT NULL,
-    proveedores_id int NOT NULL,
+    pieza_id INT NOT NULL,
+    proveedor_id int NOT NULL,
     precio INT NOT NULL,
-    PRIMARY KEY(piezas_id, proveedores_id),
+    PRIMARY KEY(pieza_id, proveedor_id),
     
-    CONSTRAINT FK_piezas FOREIGN KEY (piezas_id) REFERENCES piezas (id)
+    CONSTRAINT FK_piezas FOREIGN KEY (pieza_id) REFERENCES piezas (id)
         ON UPDATE CASCADE ON DELETE CASCADE,
         
-    CONSTRAINT FK_proveedores FOREIGN KEY (proveedores_id) REFERENCES proveedores (id)
+    CONSTRAINT FK_proveedores FOREIGN KEY (proveedor_id) REFERENCES proveedores (id)
         ON UPDATE CASCADE ON DELETE CASCADE
 );
 
@@ -35,8 +35,8 @@ INSERT INTO piezas (nombre) VALUES ('Piston');
 INSERT INTO proveedores (id,nombre) VALUES (1,'Honda');
 INSERT INTO proveedores (id,nombre) VALUES (2,'Bosch');
 
-INSERT INTO suministra (piezas_id, proveedores_id, precio) VALUES (1, 2, 20);
-INSERT INTO suministra (piezas_id, proveedores_id, precio) VALUES (2, 2, 32);
+INSERT INTO suministra (pieza_id, proveedor_id, precio) VALUES (1, 2, 20);
+INSERT INTO suministra (pieza_id, proveedor_id, precio) VALUES (2, 2, 32);
 
 SELECT * FROM suministra;
 SELECT * FROM proveedores;
